@@ -16,14 +16,11 @@ defined( 'ABSPATH' ) || exit;
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-
-			<?php understrap_posted_on(); ?>
-
+			<div class="created">Created: <?php echo get_the_date(); ?></div>
+			<div class="modified">Last Modified: <?php echo get_the_modified_date(); ?></div>
 		</div><!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 	<div class="entry-content">
 		<div class="row server-details">
@@ -32,15 +29,23 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<div class="col-md-4">
 				<h2>Institution</h2>
-				<?php reclaim_institution_tax('institution');?>
+				<?php reclaim_server_tax('institution');?>
 			</div>
 			<div class="col-md-4">
 				<h2>Data Center</h2>
-				<?php reclaim_institution_tax('server_data_center');?>
+				<?php reclaim_server_tax('server_data_center');?>
 			</div>
 			<div class="col-md-4">
 				<h2>Backup Location</h2>				
-				<?php reclaim_institution_tax('server_backup_location');?>
+				<?php reclaim_server_tax('server_backup_location');?>
+			</div>
+			<div class="col-md-4">
+				<h2>Setup Type</h2>				
+				<?php reclaim_server_tax('setup_type');?>
+			</div>
+			<div class="col-md-4">
+				<h2>Variables</h2>				
+				<?php reclaim_server_tax('additional_variables');?>
 			</div>
 		</div>
 		<?php

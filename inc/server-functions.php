@@ -17,7 +17,7 @@ function reclaim_server_url(){
 	}
 }
 
-function reclaim_institution_tax($field){
+function reclaim_server_tax($field){
 	if(get_field($field)){
 		$tax = get_field($field);
 		foreach ($tax as $key => $value) {
