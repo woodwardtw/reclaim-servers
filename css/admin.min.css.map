@@ -1,0 +1,1 @@
+{"version":3,"sources":["admin.css"],"names":[],"mappings":"AAAA,kBACE,iBAAA,0BACG,kBAAA,UACA,oBAAA,OAAA,OACA,gBAAA","sourcesContent":[".dashicons-server {\n\t background-image: url(\"../imgs/server.svg\");\n     background-repeat: no-repeat;\n     background-position: center center; \n     background-size: contain;\n}"]}
