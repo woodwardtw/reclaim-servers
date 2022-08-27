@@ -17087,4 +17087,16 @@ figure.woocommerce-product-gallery__wrapper {
   clip: auto;
 }
 
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  color: #2f495a;
+}
+
+.info-block {
+  padding: 25px;
+  border: 1px solid #2f495a;
+  border-radius: 3px;
+  margin: 30px 0;
+  font-size: 1.4rem;
+}
+
 /*# sourceMappingURL=theme.css.map */

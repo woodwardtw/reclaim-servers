@@ -1,1 +1,13 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+h1, h2, h3, h4 {
+	color: $blue;
+}
+
+.info-block {
+	padding: 25px;
+	border: 1px solid $blue;
+	border-radius: 3px;
+	margin: 30px 0;
+	font-size: 1.4rem;
+}

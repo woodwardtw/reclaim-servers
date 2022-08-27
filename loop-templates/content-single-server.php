@@ -28,24 +28,34 @@ defined( 'ABSPATH' ) || exit;
 				<?php echo reclaim_server_url();?>
 			</div>
 			<div class="col-md-4">
-				<h2>Institution</h2>
-				<?php reclaim_server_tax('institution');?>
+				<div class="info-block">
+					<h2>Institution</h2>
+					<?php reclaim_server_tax('institution');?>
+				</div>
 			</div>
 			<div class="col-md-4">
-				<h2>Data Center</h2>
-				<?php reclaim_server_tax('server_data_center');?>
+				<div class="info-block">
+					<h2>Data Center</h2>
+					<?php reclaim_server_tax('server_data_center');?>
+				</div>
 			</div>
 			<div class="col-md-4">
-				<h2>Backup Location</h2>				
-				<?php reclaim_server_tax('server_backup_location');?>
+				<div class="info-block">
+					<h2>Backup Location</h2>				
+					<?php reclaim_server_tax('server_backup_location');?>
+				</div>
 			</div>
 			<div class="col-md-4">
-				<h2>Setup Type</h2>				
-				<?php reclaim_server_tax('setup_type');?>
+				<div class="info-block">
+					<h2>Setup Type</h2>				
+					<?php reclaim_server_tax('setup_type');?>
+				</div>
 			</div>
 			<div class="col-md-4">
-				<h2>Variables</h2>				
-				<?php reclaim_server_tax('additional_variables');?>
+				<div class="info-block">
+					<h2>Variables</h2>				
+					<?php reclaim_server_tax('additional_variables');?>
+				</div>
 			</div>
 		</div>
 		<?php
