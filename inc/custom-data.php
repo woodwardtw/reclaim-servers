@@ -141,3 +141,187 @@ function reclaim_create_update_cpt() {
   $wp_rewrite->flush_rules();
 }
 add_action( 'init', 'reclaim_create_update_cpt', 0 );
+
+
+add_action( 'init', 'create_institution_taxonomies', 0 );
+function create_institution_taxonomies()
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Institutions', 'taxonomy general name' ),
+    'singular_name' => _x( 'institution', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Institutions' ),
+    'popular_items' => __( 'Popular Institutions' ),
+    'all_items' => __( 'All Institutions' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Institutions' ),
+    'update_item' => __( 'Update institution' ),
+    'add_new_item' => __( 'Add New institution' ),
+    'new_item_name' => __( 'New institution' ),
+    'add_or_remove_items' => __( 'Add or remove Institutions' ),
+    'choose_from_most_used' => __( 'Choose from the most used Institutions' ),
+    'menu_name' => __( 'Institutions' ),
+  );
+
+//registers taxonomy specific post types - default is just post
+  register_taxonomy('institutions',array('server'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'institution' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'institution',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_nav_menus' => true,    
+  ));
+}
+
+
+add_action( 'init', 'create_data_center_taxonomies', 0 );
+function create_data_center_taxonomies()
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Data centers', 'taxonomy general name' ),
+    'singular_name' => _x( 'Data center', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Data centers' ),
+    'popular_items' => __( 'Popular Data centers' ),
+    'all_items' => __( 'All Data centers' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Data centers' ),
+    'update_item' => __( 'Update data center' ),
+    'add_new_item' => __( 'Add New data center' ),
+    'new_item_name' => __( 'New data center' ),
+    'add_or_remove_items' => __( 'Add or remove Data centers' ),
+    'choose_from_most_used' => __( 'Choose from the most used Data_centers' ),
+    'menu_name' => __( 'Data centers' ),
+  );
+
+//registers taxonomy specific post types - default is just post
+  register_taxonomy('datacenters',array('server'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'data_center' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'data_center',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_nav_menus' => true,    
+  ));
+}
+
+add_action( 'init', 'create_backup_taxonomies', 0 );
+function create_backup_taxonomies()
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Backups', 'taxonomy general name' ),
+    'singular_name' => _x( 'backup', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Backups' ),
+    'popular_items' => __( 'Popular Backups' ),
+    'all_items' => __( 'All Backups' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Backups' ),
+    'update_item' => __( 'Update backup' ),
+    'add_new_item' => __( 'Add New backup' ),
+    'new_item_name' => __( 'New backup' ),
+    'add_or_remove_items' => __( 'Add or remove Backups' ),
+    'choose_from_most_used' => __( 'Choose from the most used Backups' ),
+    'menu_name' => __( 'Backups' ),
+  );
+
+//registers taxonomy specific post types - default is just post
+  register_taxonomy('backups',array('server'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'backup' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'backup',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_nav_menus' => true,    
+  ));
+}
+
+add_action( 'init', 'create_setup_taxonomies', 0 );
+function create_setup_taxonomies()
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Setups', 'taxonomy general name' ),
+    'singular_name' => _x( 'Setup', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Setups' ),
+    'popular_items' => __( 'Popular Setups' ),
+    'all_items' => __( 'All Setups' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Setups' ),
+    'update_item' => __( 'Update setup' ),
+    'add_new_item' => __( 'Add New setup' ),
+    'new_item_name' => __( 'New setup' ),
+    'add_or_remove_items' => __( 'Add or remove Setups' ),
+    'choose_from_most_used' => __( 'Choose from the most used Setups' ),
+    'menu_name' => __( 'Setups' ),
+  );
+
+//registers taxonomy specific post types - default is just post
+  register_taxonomy('setups',array('server'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'setup' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'setup',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_nav_menus' => true,    
+  ));
+}
+
+
+add_action( 'init', 'create_variable_taxonomies', 0 );
+function create_variable_taxonomies()
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Variables', 'taxonomy general name' ),
+    'singular_name' => _x( 'variable', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Variables' ),
+    'popular_items' => __( 'Popular Variables' ),
+    'all_items' => __( 'All Variables' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Variables' ),
+    'update_item' => __( 'Update variable' ),
+    'add_new_item' => __( 'Add New variable' ),
+    'new_item_name' => __( 'New variable' ),
+    'add_or_remove_items' => __( 'Add or remove Variables' ),
+    'choose_from_most_used' => __( 'Choose from the most used Variables' ),
+    'menu_name' => __( 'Variables' ),
+  );
+
+//registers taxonomy specific post types - default is just post
+  register_taxonomy('variables',array('server'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'variable' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'variable',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_nav_menus' => true,    
+  ));
+}
+

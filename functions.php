@@ -44,3 +44,36 @@ if ( class_exists( 'Jetpack' ) ) {
 foreach ( $understrap_includes as $file ) {
 	require_once get_theme_file_path( $understrap_inc_dir . $file );
 }
+
+
+//save acf json
+add_filter('acf/settings/save_json', 'reclaim_json_save_point');
+ 
+function reclaim_json_save_point( $path ) {
+    
+    // update path
+    $path = get_stylesheet_directory() . '/acf-json'; 
+    
+    // return
+    return $path;
+    
+}
+
+
+// load acf json
+add_filter('acf/settings/load_json', 'reclaim_json_load_point');
+
+function reclaim_json_load_point( $paths ) {
+    
+    // remove original path (optional)
+    unset($paths[0]);
+    
+    
+    // append path
+    $paths[] = plugin_dir_path(__FILE__)  . '/acf-json';//replace w get_stylesheet_directory() for theme
+    
+    
+    // return
+    return $paths;
+    
+}
