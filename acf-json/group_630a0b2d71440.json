@@ -130,8 +130,8 @@
         },
         {
             "key": "field_630a0b3ceea95",
-            "label": "Server Details",
-            "name": "server_details",
+            "label": "Additional Server Details",
+            "name": "additional_server_details",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -177,5 +177,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661603661
+    "modified": 1661691700
 }

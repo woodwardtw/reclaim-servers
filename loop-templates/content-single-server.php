@@ -19,7 +19,13 @@ defined( 'ABSPATH' ) || exit;
 			<div class="dates">
 				<div class="created">Created: <?php echo get_the_date(); ?></div>
 				<div class="modified">Last Modified: <?php echo get_the_modified_date(); ?></div>
-			</div>			
+			</div>
+			<div class="actions">
+				<a class="btn btn-primary btn-server" href="#updates">See Updates</a>
+				<button type="button" class="btn btn-primary btn-server" data-bs-toggle="modal" data-bs-target="#serverUpdateModal">
+					Make Update
+				</button>
+			</div>		
 		</div><!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
@@ -62,7 +68,14 @@ defined( 'ABSPATH' ) || exit;
 					<?php reclaim_server_tax('additional_variables');?>
 				</div>
 			</div>
-		</div>
+			<?php reclaim_server_details();?>
+			<div class="updates col-md-12" id="updates">
+				<div class='info-block'>
+					<h2>Updates</h2>
+					<?php reclaim_server_updates();?>
+				</div>
+			</div>
+		</div><!--end row-->
 		<?php
 		the_content();
 		understrap_link_pages();
@@ -71,7 +84,23 @@ defined( 'ABSPATH' ) || exit;
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-
+		<!-- Modal -->
+			<div class="modal fade" id="serverUpdateModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="modalLabel">Update</h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			        <?php reclaim_server_update_form();?>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		<?php understrap_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->

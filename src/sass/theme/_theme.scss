@@ -1,6 +1,10 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
+html {
+	scroll-behavior: smooth;
+}
+
 h1, h2, h3, h4 {
 	color: $blue;
 	font-family: 'Rubik', sans-serif;
@@ -25,8 +29,19 @@ h1, h2, h3, h4 {
 	font-size: 3rem;
 	font-weight: 700;
 	margin: 20px 0;
+	border-bottom: 2px solid $orange;
 }
 
 .server-item {
 	padding: 5px 20px;
+}
+
+.btn-server {
+	background-color: $orange;
+	border: $orange;
+}
+
+.entry-meta {
+	display: flex;
+	justify-content: space-between;
 }
