@@ -45,3 +45,12 @@ h1, h2, h3, h4 {
 	display: flex;
 	justify-content: space-between;
 }
+
+.update-detail {
+	border-bottom: 1px solid $grey;
+	margin-bottom: 10px;
+}
+
+#updates .info-block:last-of-type {
+	border-bottom: none;
+}
