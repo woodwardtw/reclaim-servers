@@ -1,13 +1,32 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
 h1, h2, h3, h4 {
 	color: $blue;
+	font-family: 'Rubik', sans-serif;
 }
 
+
 .info-block {
-	padding: 25px;
 	border: 1px solid $blue;
-	border-radius: 3px;
-	margin: 30px 0;
+	margin: 20px 0 30px 0;
 	font-size: 1.4rem;
+	background-color: #f4f4f4;
+}
+
+.info-block h2 {
+	background-color: $blue;
+	color: #fff;
+	width: 100%;
+	padding: 10px 20px;
+}
+
+.server-title {
+	font-size: 3rem;
+	font-weight: 700;
+	margin: 20px 0;
+}
+
+.server-item {
+	padding: 5px 20px;
 }

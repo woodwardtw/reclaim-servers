@@ -13,20 +13,25 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title server-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<div class="created">Created: <?php echo get_the_date(); ?></div>
-			<div class="modified">Last Modified: <?php echo get_the_modified_date(); ?></div>
+			<div class="dates">
+				<div class="created">Created: <?php echo get_the_date(); ?></div>
+				<div class="modified">Last Modified: <?php echo get_the_modified_date(); ?></div>
+			</div>			
 		</div><!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<div class="row server-details">
-			<div class="env-url col-md-12">
-				<?php echo reclaim_server_url();?>
-			</div>
+			<div class="col-md-4">
+				<div class="info-block">				
+					<h2>Environment URL</h2>
+					<?php echo reclaim_server_url();?>
+				</div>
+			</div>			
 			<div class="col-md-4">
 				<div class="info-block">
 					<h2>Institution</h2>

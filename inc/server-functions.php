@@ -11,7 +11,9 @@ defined( 'ABSPATH' ) || exit;
 function reclaim_server_url(){
 	if(get_field('environment_url')){
 		$url = get_field('environment_url');
-		return "<h2>ENV URL</h2><a href='{$url}'>{$url}</a>";
+		return "<div class='server-item'>
+					<a href='{$url}'>{$url}</a>
+				</div>";
 	} else {
 		return 'This has not been set.';
 	}
@@ -23,7 +25,9 @@ function reclaim_server_tax($field){
 		foreach ($tax as $key => $value) {
 			$name = $value->name;
 			$url = get_term_link($value->term_id);
-			echo "<div><a href='{$url}'>{$name}</a></div>";
+			echo "<div class='server-item'>
+					<a href='{$url}'>{$name}</a>
+				</div>";
 		}
 	} else {
 		echo 'This has not been set.';
