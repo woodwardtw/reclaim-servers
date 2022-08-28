@@ -32,44 +32,20 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="entry-content">
 		<div class="row server-details">
-			<div class="col-md-4">
+			<div class="col-md-5">
 				<div class="info-block">				
 					<h2>Environment URL</h2>
 					<?php echo reclaim_server_url();?>
 				</div>
+				<?php reclaim_server_detail('institution', 'Institution');?>
+				<?php reclaim_server_detail('server_data_center', 'Data Center');?>
+				<?php reclaim_server_detail('server_backup_location', 'Backup Location');?>
+				<?php reclaim_server_detail('setup_type', 'Setup Type');?>
+				<?php reclaim_server_detail('additional_variables', 'Variables');?>
+																
+				<?php reclaim_server_details();?>
 			</div>			
-			<div class="col-md-4">
-				<div class="info-block">
-					<h2>Institution</h2>
-					<?php reclaim_server_tax('institution');?>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="info-block">
-					<h2>Data Center</h2>
-					<?php reclaim_server_tax('server_data_center');?>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="info-block">
-					<h2>Backup Location</h2>				
-					<?php reclaim_server_tax('server_backup_location');?>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="info-block">
-					<h2>Setup Type</h2>				
-					<?php reclaim_server_tax('setup_type');?>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="info-block">
-					<h2>Variables</h2>				
-					<?php reclaim_server_tax('additional_variables');?>
-				</div>
-			</div>
-			<?php reclaim_server_details();?>
-			<div class="updates col-md-12" id="updates">
+			<div class="updates col-md-7" id="updates">
 				<div class='info-block'>
 					<h2>Updates</h2>
 					<?php reclaim_server_updates();?>

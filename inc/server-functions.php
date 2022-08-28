@@ -34,6 +34,23 @@ function reclaim_server_tax($field){
 	}
 }
 
+function reclaim_server_detail($field,$title){
+	if(get_field($field)){
+		$tax = get_field($field);
+		foreach ($tax as $key => $value) {
+			$name = $value->name;
+			$url = get_term_link($value->term_id);
+			echo "<div class='server-item'>
+					<span class='detail-name'>{$title}: </span>
+						<a href='{$url}'>{$name}</a>
+					</div>
+				";
+		}
+	} else {
+		echo "<span class='detail-name'>{$title}: </span>This has not been set.";
+	}
+}
+
 function reclaim_server_details(){
 	if(get_field('additional_server_details')){
 		$details = get_field('additional_server_details');
