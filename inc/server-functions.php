@@ -19,33 +19,35 @@ function reclaim_server_url(){
 	}
 }
 
-function reclaim_server_tax($field){
-	if(get_field($field)){
-		$tax = get_field($field);
-		foreach ($tax as $key => $value) {
-			$name = $value->name;
-			$url = get_term_link($value->term_id);
-			echo "<div class='server-item'>
-					<a href='{$url}'>{$name}</a>
-				</div>";
-		}
-	} else {
-		echo 'This has not been set.';
-	}
-}
+//deprecated for another pattern
+// function reclaim_server_tax($field){
+// 	if(get_field($field)){
+// 		$tax = get_field($field);
+// 		foreach ($tax as $key => $value) {
+// 			$name = $value->name;
+// 			$url = get_term_link($value->term_id);
+// 			echo "<div class='server-item'>
+// 					<a href='{$url}'>{$name}</a>
+// 				</div>";
+// 		}
+// 	} else {
+// 		echo 'This has not been set.';
+// 	}
+// }
 
 function reclaim_server_detail($field,$title){
 	if(get_field($field)){
 		$tax = get_field($field);
+		echo "<div class='server-element'><span class='detail-name'>{$title}: </span>";
 		foreach ($tax as $key => $value) {
 			$name = $value->name;
 			$url = get_term_link($value->term_id);
-			echo "<div class='server-item'>
-					<span class='detail-name'>{$title}: </span>
+			echo "<span class='server-item'>
 						<a href='{$url}'>{$name}</a>
-					</div>
+					</span>
 				";
 		}
+		echo '</div>';
 	} else {
 		echo "<span class='detail-name'>{$title}: </span>This has not been set.";
 	}

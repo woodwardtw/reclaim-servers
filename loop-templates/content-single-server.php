@@ -33,10 +33,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 		<div class="row server-details">
 			<div class="col-md-5">
-				<div class="info-block">				
-					<h2>Environment URL</h2>
-					<?php echo reclaim_server_url();?>
-				</div>
+				<?php echo reclaim_server_url();?>			
 				<?php reclaim_server_detail('institution', 'Institution');?>
 				<?php reclaim_server_detail('server_data_center', 'Data Center');?>
 				<?php reclaim_server_detail('server_backup_location', 'Backup Location');?>
