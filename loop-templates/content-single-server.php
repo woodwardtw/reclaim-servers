@@ -14,15 +14,15 @@ defined( 'ABSPATH' ) || exit;
 	<header class="entry-header">
 
 		<?php the_title( '<h1 class="entry-title server-title">', '</h1>' ); ?>
-
+		<?php echo reclaim_server_url(); ?>
 		<div class="entry-meta">
 			<div class="dates">
 				<div class="created">Created: <?php echo get_the_date(); ?></div>
-				<div class="modified">Last Modified: <?php echo get_the_modified_date(); ?></div>
+				<div class="modified">Modified: <?php echo get_the_modified_date(); ?></div>				
 			</div>
 			<div class="actions">
-				<a class="btn btn-primary btn-server" href="#updates">See Updates</a>
-				<button type="button" class="btn btn-primary btn-server" data-bs-toggle="modal" data-bs-target="#serverUpdateModal">
+<!-- 				<a class="btn btn-primary btn-server" href="#updates">See Updates</a>
+ -->				<button type="button" class="btn btn-primary btn-server" data-bs-toggle="modal" data-bs-target="#serverUpdateModal">
 					Make Update
 				</button>
 			</div>		
@@ -31,9 +31,9 @@ defined( 'ABSPATH' ) || exit;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+
 		<div class="row server-details">
 			<div class="col-md-5">
-				<?php echo reclaim_server_url();?>			
 				<?php reclaim_server_detail('institution', 'Institution');?>
 				<?php reclaim_server_detail('server_data_center', 'Data Center');?>
 				<?php reclaim_server_detail('server_backup_location', 'Backup Location');?>
@@ -44,7 +44,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>			
 			<div class="updates col-md-7" id="updates">
 				<div class='info-block'>
-					<h2>Updates</h2>
+					<h2>Updates:</h2>
 					<?php reclaim_server_updates();?>
 				</div>
 			</div>

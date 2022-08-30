@@ -1,5 +1,5 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400&display=swap');
 
 html {
 	scroll-behavior: smooth;
@@ -7,7 +7,7 @@ html {
 
 h1, h2, h3, h4 {
 	color: $blue;
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Red Hat Mono', monospace;
 }
 
 .info-block {
@@ -15,6 +15,7 @@ h1, h2, h3, h4 {
 	font-size: 1rem;
 	padding: 10px 20px;
 	background-color: $blue;
+	font-weight: 200;
 }
 
 .info-block h2 {
@@ -22,18 +23,27 @@ h1, h2, h3, h4 {
 	color: #fff;
 	width: 100%;
 	font-size: 1.2rem;
+	font-weight: 200;	
 }
 
 .server-title {
 	font-size: 3rem;
-	font-weight: 700;
+	font-weight: 400;
 	margin: 20px 0;
 	border-bottom: 2px solid $orange;
+}
+
+.server-details {
+	margin-top: 30px;
 }
 
 .server-element {
 	border-bottom: 1px solid #efefef;
 	transition: all .4s ease;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;	
 }
 
 .server-element:hover {
@@ -41,25 +51,59 @@ h1, h2, h3, h4 {
 	border-left: 5px solid $orange;
 }
 
-.server-item, .server-element {
+
+.server-item, .server-element, .server-paragraph {
 	padding: 5px 20px;
 	background-color: $blue;
 	font-size: 1.2rem;
 	color: #fff;
+	margin-left:auto;
+}
+
+.server-item {
+	width: 50%;
 }
 
 .server-item a {
 	color: #fff;
+	font-weight: 200;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	transition: all .4s ease;
 }
 
-.server-item h3 {
+.server-item a:after {
+	content: '';
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: -20px;
+	bottom: 5px;
+	background-image: url(../imgs/link.svg);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+
+.server-item a:hover {
+	text-decoration: underline;
+}
+
+.server-item h3, .server-paragraph h3 {
 	color: #fff;
+	font-weight: 200;
+	font-size: 1.1rem;
 }
 
 .detail-name {
 	font-weight: 200;
-	width: 150px;
+	width: 45%;
+	font-family: 'Red Hat Mono', monospace;
 	display: inline-block;
+	padding: 5px 0;
 }
 
 .btn-server {
@@ -72,7 +116,16 @@ h1, h2, h3, h4 {
 	justify-content: space-between;
 }
 
+#updates .server-paragraph {
+	border-top: 1px solid $grey;
+}
+
+#updates .server-paragraph h3{
+	margin-top: 10px;
+}
+
 .update-detail {
-	border-bottom: 1px solid $grey;
-	margin-bottom: 10px;
+	margin: 10px 0;
+	font-weight: 200;
+	font-size: 1rem;
 }

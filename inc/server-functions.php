@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 function reclaim_server_url(){
 	if(get_field('environment_url')){
 		$url = get_field('environment_url');
-		return "<div class='server-item'>
+		return "<div class='server-url'>
 					<a href='{$url}'>{$url}</a>
 				</div>";
 	} else {
@@ -38,13 +38,13 @@ function reclaim_server_url(){
 function reclaim_server_detail($field,$title){
 	if(get_field($field)){
 		$tax = get_field($field);
-		echo "<div class='server-element'><span class='detail-name'>{$title}: </span>";
+		echo "<div class='server-element'><div class='detail-name'>{$title}: </div>";
 		foreach ($tax as $key => $value) {
 			$name = $value->name;
 			$url = get_term_link($value->term_id);
-			echo "<span class='server-item'>
+			echo "<div class='server-item'>
 						<a href='{$url}'>{$name}</a>
-					</span>
+					</div>
 				";
 		}
 		echo '</div>';
@@ -59,8 +59,8 @@ function reclaim_server_details(){
 		echo  "
 				<div class='col-md-12'>
 					<div class='info-block'>
-						<h2>Additional details</h2>
-						<div class='server-item'>
+						<h2>Additional Details:</h2>
+						<div class='server-paragraph'>
 							{$details}
 						</div>
 					</div>
@@ -83,7 +83,7 @@ function reclaim_server_updates(){
 	                       //DO YOUR THING
 	                      	$title = get_the_title();
 	                        $html .= "
-	                        	<div class='update server-item'>
+	                        	<div class='update server-paragraph'>
 	                        		<h3>$title</h3>
 	                        		<div class='update-detail'>
 	                        			content
