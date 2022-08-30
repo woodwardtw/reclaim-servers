@@ -82,11 +82,12 @@ function reclaim_server_updates(){
 	                      while ( $the_query->have_posts() ) : $the_query->the_post();
 	                       //DO YOUR THING
 	                      	$title = get_the_title();
+	                      	$content = get_the_content();
 	                        $html .= "
 	                        	<div class='update server-paragraph'>
 	                        		<h3>$title</h3>
 	                        		<div class='update-detail'>
-	                        			content
+	                        			{$content}
 	                        		</div>
 	                        	</div>	
 	                        ";
